@@ -18,7 +18,13 @@ export default function HomeTicket({ setShow }) {
     
     const [showLogin, setShowLogin] = useState(false)
     const [state, _] = useContext(UserContext)
-    const [result, setResult] = useState();
+    
+
+    let { data: tickets } = useQuery('ticketsCache', async () => {
+        const response = await API.get('/tickets');
+        return response.data.data;
+    })
+    console.log("ini data tiket allllllllllll", tickets);
 
     useEffect(() => {
         if (state.isLogin === true) {
@@ -40,11 +46,6 @@ export default function HomeTicket({ setShow }) {
           [e.target.name]: e.target.value,
         });
     }
-
-    let { data: tickets } = useQuery('ticketCache', async () => {
-        const response = await API.get('/tickets');
-        return response.data.data;
-    })
     
     const handleSearch = (e) => {
         e.preventDefault();
@@ -88,6 +89,7 @@ export default function HomeTicket({ setShow }) {
 
     useEffect(() => {
         getStation();
+        
     }, [])
 
     return (
@@ -218,7 +220,11 @@ export default function HomeTicket({ setShow }) {
                         <h2 className="font-bold">Harga Per Orang</h2>
                     </div>
                 </Card>
-                <TicketList />
+                
+                    <TicketList 
+                    ticket={ticket} 
+                    tickets={tickets}
+                    />
             </div>
             <FooterBar />
         </>
