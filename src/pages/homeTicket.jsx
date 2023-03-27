@@ -19,12 +19,10 @@ export default function HomeTicket({ setShow }) {
     const [showLogin, setShowLogin] = useState(false)
     const [state, _] = useContext(UserContext)
     
-
     let { data: tickets } = useQuery('ticketsCache', async () => {
         const response = await API.get('/tickets');
         return response.data.data;
     })
-    console.log("ini data tiket allllllllllll", tickets);
 
     useEffect(() => {
         if (state.isLogin === true) {
@@ -57,7 +55,6 @@ export default function HomeTicket({ setShow }) {
             );
         });
         setTicket(search);
-        console.log("ini data filter", search)
     };
 
 
