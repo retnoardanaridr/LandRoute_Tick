@@ -58,7 +58,7 @@ export default function AddTicket() {
                 </Alert>
             )
             setMessage(alert)
-            console.log("ticked berhasil tambah", response.data.data)
+            console.log(response)
             navigate('/')
         } catch (error) {
             const alert = (
