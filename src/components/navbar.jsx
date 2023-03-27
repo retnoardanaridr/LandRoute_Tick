@@ -97,7 +97,18 @@ function Navbar() {
                   </Link>
                 </Dropdown.Item>
               ) : (
-                <></>
+                <Dropdown.Item>
+                  <Link to={'/add-station'}>
+                    <div className="pb-1">
+                      <div className="px-2 py-1 text-sm text-gray-700 flex items-center cursor-pointer hover:bg-grey-100">
+                        <div className="w-5 mr-3">
+                          <img src={tiket} alt="" />
+                        </div>
+                        <span>Add Station</span>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
               )}
 
               <Dropdown.Divider className="border-rose-400" />

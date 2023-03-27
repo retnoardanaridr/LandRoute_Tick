@@ -9,6 +9,7 @@ import HomeTicket from './pages/homeTicket';
 import ListTransaction from './pages/indexAdmin';
 import MyTicket from './pages/myTiket';
 import Payment from './pages/payment';
+import AddStation from './pages/addStation';
 
 function App() {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ function App() {
         <Route exact path='/my-ticket' element={<MyTicket/>} />
         <Route exact path='/payment' element={<Payment/>}/>
         <Route exact path='/add-ticket' element={<AddTicket/>} />
+        <Route exact path='/add-station' element={<AddStation/>} />
         <Route exact path='/index-admin' element={<ListTransaction/>} />
       </Routes>
     </>
