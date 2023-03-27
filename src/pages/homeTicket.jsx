@@ -56,22 +56,6 @@ export default function HomeTicket({ setShow }) {
         });
         setTicket(search);
     };
-
-
-
-    // function timeDuration() {
-    //     // const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
-    //     const start_time = tickets.start_time
-    //     const arrival_time = tickets.arrival_time
-    //     // console.log(start_time)
-    //     // console.log(arrival_time)
-
-    //     const response = Math.abs(arrival_time - start_time);
-    //     var hours = Math.floor(response / 3600)
-    //     var minutes = Math.floor(response % 3600 / 60)
-    //     console.log(response)
-    //     return hours + minutes
-    // }
     
 
     const [station, setStation] = useState();
